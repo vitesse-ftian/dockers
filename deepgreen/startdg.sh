@@ -1,4 +1,4 @@
 #!/bin/bash
 
 mkdir -p data
-docker run -i -v $PWD/data:/home/deepgreen/persist deepgreen
+docker run --hostname=dg --net=dgnet --ip=172.20.0.10 -i -v $PWD/data:/home/deepgreen/persist deepgreen

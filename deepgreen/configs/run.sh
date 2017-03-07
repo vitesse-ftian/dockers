@@ -19,12 +19,21 @@ cd /home/deepgreen
 # NOTE: Trouble continues, gpssh does not the map hack -- need to gpssh-exkeys
 # again, otherwise, gpstart, xdrive will fail.
 #
+# OK, turns out this hack is unnecessary, if we pass in hostname in docker run.
+# 
 
 if [ -f ./persist/db/hostfile ]; then
-    mapfile < /home/deepgreen/persist/hostname_at_gpinit
-    echo "127.0.0.1 ${MAPFILE[@]}" | sudo tee -a /etc/hosts
+    # 
+    # The following can be done with docker run --add-host hostname:ip
+    # but we will stick to one good hostname so forget it ...
+    # 
+    # mapfile < /home/deepgreen/persist/hostname_at_gpinit
+    # echo "127.0.0.1 ${MAPFILE[@]}" | sudo tee -a /etc/hosts
+    #
 
+    # Still need to exchange keys again, because .ssh is not persisted.
 	gpssh-exkeys -f ./persist/db/hostfile
+
 	echo "Start deepgreen database ..."
 	gpstart -a
 	echo "Start xdrive ..."
@@ -33,7 +42,9 @@ else
 	sudo chown deepgreen ~/cluster.conf
 	chmod 755 ~/cluster.conf
 	sudo chown deepgreen /home/deepgreen/persist
-    hostname > /home/deepgreen/persist/hostname_at_gpinit
+
+    # Hack is not necessary.
+    # hostname > /home/deepgreen/persist/hostname_at_gpinit
 
 	echo "Init deepgreen database ..."
 	mkdir -p /home/deepgreen/persist/db
