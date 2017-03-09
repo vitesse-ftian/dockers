@@ -1,11 +1,19 @@
 #!/bin/bash
 
-FILE=deepgreendb.16.15.rh6.x86_64.170221.bin
-if [ -f $FILE ]; then
-    echo "Using already downloaded $FILE."
+
+function download {
+if [ -f $2 ]; then
+    echo "Using already downloaded $2." 
 else 
-    echo "Download $FILE."
-    curl -O http://storage.googleapis.com/vitessedata/download/$FILE
+    echo "Download $2." 
+    curl -O $1/$2 
 fi
+}
+
+DEEPGREEN=deepgreendb.16.15.rh6.x86_64.170221.bin
+GO=go1.8.linux-amd64.tar.gz
+
+download http://storage.googleapis.com/vitessedata/download $DEEPGREEN
+download https://storage.googleapis.com/golang $GO
 
 docker build -t deepgreen .
