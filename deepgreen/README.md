@@ -24,4 +24,11 @@ First run will init a deepgreen with 4 segments.  It will start xdrive as well.
 Data is persisted in ./data dir.   Hit ^D to stop the docker process.
 Later runs will just start data base, with persisted data.
 
-
+# Zabbix
+Zabbix agent software is installed in the docker and should have been properly
+configed.  But we do not start it because not all people use this container
+cares.  dgza developer need to start this manually, or, update the run.sh 
+script.
+```
+sudo /etc/init.d/zabbix-agent [re]start
+```
