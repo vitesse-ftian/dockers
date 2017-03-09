@@ -11,7 +11,7 @@ RUN echo root:deepGr33n | chpasswd \
         && bash /tmp/root.sh \
         && su deepgreen -l -c "bash /tmp/deepgreen.sh" 
 
-EXPOSE 5432 22 6688
+EXPOSE 5432 22
 
 CMD service sshd start \ 
     && su deepgreen -l -c "bash /home/deepgreen/run.sh" \
