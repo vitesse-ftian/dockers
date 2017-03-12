@@ -25,9 +25,11 @@ Data is persisted in ./data dir.   Hit ^D to stop the docker process.
 Later runs will just start data base, with persisted data.
 
 # Zabbix
-Zabbix agent software is installed in the docker and should have been properly
-configed.  But we do not start it because not all people use this container
-cares.  dgza developer need to start this manually, or, update the run.sh 
+Use dgtools.sh to pull dgtools from github.  The script should build/install
+Zabbix agent software.   
+
+We do not start it because not all people use this container cares.  
+dgza developer need to start this manually, or, update the run.sh 
 script.
 ```
 sudo /etc/init.d/zabbix-agent [re]start
