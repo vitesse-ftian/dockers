@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo mv /tmp/deepgreen*.bin /home/deepgreen/ 
-printf "\n\n\n" | bash /home/deepgreen/deepgreen*.bin --accept-license
+sudo mv /tmp/*deepgreen*.bin /home/deepgreen/ 
+printf "\n\n\n" | bash /home/deepgreen/*deepgreen*.bin --accept-license
 
 echo 'export PATH=$PATH:/usr/local/go/bin' >> ~/.bash_profile
 echo 'export GOPATH=/home/deepgreen/persist/go:/home/deepgreen/persist/dgtools/zabbix:/home/deepgreen/persist/dgtools/fsplugin_csv' >> ~/.bash_profile
@@ -9,7 +9,7 @@ echo 'export MASTER_DATA_DIRECTORY=/home/deepgreen/persist/db/data0/dg-1' >> ~/.
 echo 'source /home/deepgreen/deepgreendb/greenplum_path.sh' >> ~/.bash_profile
 source ~/.bash_profile
 
-sudo rm ~/deepgreen*.bin
+sudo rm ~/*deepgreen*.bin
 sudo mv /tmp/cluster.conf ~
 sudo mv /tmp/xdrive.toml ~
 sudo mv /tmp/run.sh ~
