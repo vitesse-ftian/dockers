@@ -15,6 +15,9 @@ sudo mv /tmp/xdrive.toml ~
 sudo mv /tmp/run.sh ~
 sudo mv /tmp/dgtools.sh ~
 
+sudo mv /tmp/dotfiles.tgz ~
+(cd; tar zxf dotfiles.tgz)
+
 sudo mkdir -p /usr/local/dgza
 sudo sed -i 's/^Server=.*$/Server=172.20.0.6/g' /etc/zabbix/zabbix_agentd.conf
 sudo sed -i 's/^ServerActive=.*$/ServerActive=172.20.0.6/g' /etc/zabbix/zabbix_agentd.conf
