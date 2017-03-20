@@ -1,0 +1,9 @@
+[xdrive]
+    dir = "/home/deepgreen/persist/xdrive" 
+    host = [ "localhost:6688" ]
+
+[[xdrive.mount]]
+name = "local" 
+scheme = "nfs"
+root = "/home/deepgreen/persist/xdrive/data" 
+conf = ""

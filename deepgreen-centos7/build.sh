@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+function download {
+if [ -f $2 ]; then
+    echo "Using already downloaded $2." 
+else 
+    echo "Download $2." 
+    curl -O $1/$2 
+fi
+}
+
+DEEPGREEN=beta.deepgreendb.16.16.rh6.x86_64.170312.bin
+GO=go1.8.linux-amd64.tar.gz
+
+download http://storage.googleapis.com/vitessedata/download $DEEPGREEN
+download https://storage.googleapis.com/golang $GO
+
+docker build -t deepgreen-centos7 .
