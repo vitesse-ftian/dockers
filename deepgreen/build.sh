@@ -10,7 +10,7 @@ else
 fi
 }
 
-DEEPGREEN=beta.deepgreendb.16.16.rh6.x86_64.170312.bin
+DEEPGREEN=beta.deepgreendb.16.16.rh6.x86_64.170323.bin
 GO=go1.8.linux-amd64.tar.gz
 
 download http://storage.googleapis.com/vitessedata/download $DEEPGREEN
