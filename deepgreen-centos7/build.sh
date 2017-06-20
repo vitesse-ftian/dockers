@@ -10,7 +10,7 @@ else
 fi
 }
 
-DEEPGREEN=deepgreendb.16.17.rh6.x86_64.170519.bin
+DEEPGREEN=deepgreendb.16.17.rh6.x86_64.170521.bin
 GO=go1.8.linux-amd64.tar.gz
 
 download http://storage.googleapis.com/vitessedata/download $DEEPGREEN
@@ -20,4 +20,4 @@ download https://storage.googleapis.com/golang $GO
 # (cd; tar zcf dotfiles.tgz .vimrc .vim .tmux.conf .gitconfig)
 # mv ~/dotfiles.tgz .
 
-docker build -t deepgreen-centos7 .
+docker build --no-cache=true -t deepgreen-centos7 .
