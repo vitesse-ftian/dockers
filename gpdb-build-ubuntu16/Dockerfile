@@ -9,10 +9,12 @@ COPY * /tmp/
 RUN echo root:deepGr33n | chpasswd 
 RUN apt-get update
 RUN apt-get install -y git vim tmux openssh-client openssh-server sudo
-RUN apt-get install -y flex bison autoconf libtool bzip2
+RUN apt-get install -y flex bison autoconf libtool bzip2 unzip
 RUN apt-get install -y libyaml-dev libreadline-dev zlib1g-dev libssl-dev
 RUN apt-get install -y python-dev libpython-dev
 RUN apt-get install -y libcurl4-openssl-dev
+RUN apt-get install -y libevent-dev libxml2 libxml2-dev libbz2-dev
+RUN apt-get install -y libapr1-dev
 RUN apt-get install -y python-pip
 RUN pip install --upgrade pip
 RUN pip install setuptools
